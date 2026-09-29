@@ -10,7 +10,7 @@
 ## 注意事項
 
 - 本模組需先下載遊戲本體《Degrees of Lewdity》才能使用。
-- 本模組為簡體中文版本,適配 [ModI18N-0.5.11.9-chs-1.0.0a.mod.zip](https://github.com/Eltirosto/Degrees-of-Lewdity-Chinese-Localization/releases/download/v0.5.11.9-chs-1.0.0a/ModI18N-0.5.11.9-chs-1.0.0a.mod.zip),請先安裝該漢化模組。
+- 本模組為簡體中文版本，適配 [ModI18N-0.5.11.9-chs-1.0.0a.mod.zip](https://github.com/Eltirosto/Degrees-of-Lewdity-Chinese-Localization/releases/download/v0.5.11.9-chs-1.0.0a/ModI18N-0.5.11.9-chs-1.0.0a.mod.zip)，請先安裝該漢化模組。
 - 目前相容的遊戲版本為 0.5.11。
 
 ## 內容物
