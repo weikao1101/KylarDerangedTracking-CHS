@@ -1,0 +1,179 @@
+{
+    "name": "KylarDerangedTracking-CHS",
+    "version": "2.0.25",
+    "styleFileList": [],
+    "scriptFileList": [
+        "kylar_deranged_ui_chs.js"
+    ],
+    "tweeFileList": [
+        "kylar_deranged_chs.twee"
+    ],
+    "imgFileList": [],
+    "addonPlugin": [
+        {
+            "modName": "TweeReplacer",
+            "addonName": "TweeReplacerAddon",
+            "modVersion": "^1.2.0",
+            "params": [
+                {
+                    "passage": "Widgets Named Npcs",
+                    "findString": "<<case love>>\n\t\t<<if $valentines and Time.monthDay is 14 and setup.loveInterestNpc.includes(_nam)>>\n\t\t\t<<set _val += _val>>\n\t\t<</if>>\n\t\t<<set $NPCName[_i].love += _val>>",
+                    "replace": "<<case love>>\n\t\t<<if $valentines and Time.monthDay is 14 and setup.loveInterestNpc.includes(_nam)>>\n\t\t\t<<set _val += _val>>\n\t\t<</if>>\n\t\t<<set $NPCName[_i].love += _val>>\n\t\t<<if _nam is \"Kylar\">>\n\t\t\t<<if $kylarDerangedFlow isnot 1 and _val > 0>>\n\t\t\t\t<<set $kylarInteractedToday to 1>>\n\t\t\t<</if>>\n\t\t\t<<if $NPCName[_i].love gte 70>>\n\t\t\t\t<<set $NPCName[_i].deranged to Math.clamp(($NPCName[_i].deranged || 0) + _val, 0, 100)>>\n\t\t\t<</if>>\n\t\t<</if>>",
+                    "tip": "2.0.25:今日是否有正向互动改为只认爱意「增加」(_val>0),扣爱意/纯嫉妒/无互动皆归2%衰退那桶",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Widgets Events Street",
+                    "findString": "<<elseif $kylarwatched is 1>>\n\t\t\t<<if $exposed gte 1 or C.npc.Kylar.state isnot \"active\" or $kylarwatchedtimer lte 0 or _kylarLocation.area is $location>>\n\t\t\t\t<<set $kylarwatched to 0>>",
+                    "replace": "<<elseif $kylarwatched is 1>>\n\t\t\t<<if State.length is State.size and ($location is \"park\" or $location is \"alley\") and $exposed lte 0 and C.npc.Kylar.state is \"active\" and $kylar_mad isnot 1 and ($daily.kylar.secludedCount || 0) lt 3 and random(1,100) lte 70>>\n\t\t\t\t<<set $kylarwatched to 0>>\n\t\t\t\t<<set $daily.kylar.secludedCount to ($daily.kylar.secludedCount || 0) + 1>>\n\t\t\t\t<<set $eventskip to 1>>\n\t\t\t\t<<goto \"Kylar Secluded Encounter\">>\n\t\t\t<<elseif $exposed gte 1 or C.npc.Kylar.state isnot \"active\" or $kylarwatchedtimer lte 0 or _kylarLocation.area is $location>>\n\t\t\t\t<<set $kylarwatched to 0>>",
+                    "tip": "2.0.14:跟踪中进入公园/后巷时70%强制触发病态遭遇(加上State.length is State.size防止回退时重复触发)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Widgets Events Drain",
+                    "findString": "\t<<else>>\n\t\t<<cleareventpool>>",
+                    "replace": "\t<<elseif State.length is State.size and $kylarwatched is 1 and C.npc.Kylar.state is \"active\" and $exposed lte 0 and $kylar_mad isnot 1 and ($daily.kylar.secludedCount || 0) lt 3 and random(1,100) lte 70>>\n\t\t<<set $kylarwatched to 0>>\n\t\t<<set $daily.kylar.secludedCount to ($daily.kylar.secludedCount || 0) + 1>>\n\t\t<<set $eventskip to 1>>\n\t\t<<goto \"Kylar Secluded Encounter Drain\">>\n\t<<else>>\n\t\t<<cleareventpool>>",
+                    "tip": "2.0.14:跟踪中进入下水道时70%强制触发病态遭遇(加上State.length is State.size防止回退时重复触发)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Sex Finish",
+                    "findString": "<<set $outside to 0>><<set $location to \"town\">><<effects>><<run statusCheck(\"Kylar\")>>",
+                    "replace": "<<set _derangedMattress to ($kylarDerangedFlow is 1)>><<set $kylarDerangedFlow to 0>>\n<<if $location is \"drain\">>\n\t<<goto \"Drain Kylar Sex Finish\">>\n<<elseif $kylarItem and $enemyarousal gte $enemyarousalmax>>\n\t<<goto \"Kylar Item Removal Sex Finish\">>\n<</if>>\n<<set $outside to 0>><<set $location to \"town\">><<effects>><<run statusCheck(\"Kylar\")>>",
+                    "tip": "2.0.15:goto段首导向+撷取病态流程旗标(给床垫文字patch判断用)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Rape Finish",
+                    "findString": "<<set $outside to 0>><<set $location to \"town\">><<effects>>",
+                    "replace": "<<set _derangedMattress to ($kylarDerangedFlow is 1)>><<set $kylarDerangedFlow to 0>>\n<<if $location is \"drain\">>\n\t<<goto \"Drain Kylar Rape Finish\">>\n<<elseif $kylarItem and $enemyarousal gte $enemyarousalmax>>\n\t<<goto \"Kylar Item Removal Rape Finish\">>\n<</if>>\n<<set $outside to 0>><<set $location to \"town\">><<effects>>",
+                    "tip": "2.0.15:goto段首导向+撷取病态流程旗标(给床垫文字patch判断用)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Widgets",
+                    "findString": "T.importantNpcStats = [\"love\", \"lust\", \"dom\", \"trauma\", \"rage\", \"purity\", \"corruption\", \"harmony\", \"ferocity\"];",
+                    "replace": "T.importantNpcStats = (T.npcData.nam === \"Kylar\") ? [\"love\", \"lust\", \"deranged\", \"rage\", \"dom\", \"trauma\", \"purity\", \"corruption\", \"harmony\", \"ferocity\"] : [\"love\", \"lust\", \"dom\", \"trauma\", \"rage\", \"purity\", \"corruption\", \"harmony\", \"ferocity\"];",
+                    "tip": "凯拉尔专属数值显示顺序",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Widgets",
+                    "findString": "\"love\" : {\n\t\t\t\t\tname : setup.loveAlias[T.npcData.nam](),\n\t\t\t\t\tvalue : T.npcData.love,\n\t\t\t\t\tactiveIcon : 'img/ui/sym-love.png',\n\t\t\t\t\tinactiveIcon: 'img/ui/sym-love-empty.png',\n\t\t\t\t\tcolor: 'red'\n\t\t\t\t},\n\t\t\t\t",
+                    "replace": "\"love\" : {\n\t\t\t\t\tname : setup.loveAlias[T.npcData.nam](),\n\t\t\t\t\tvalue : T.npcData.love,\n\t\t\t\t\tactiveIcon : 'img/ui/sym-love.png',\n\t\t\t\t\tinactiveIcon: 'img/ui/sym-love-empty.png',\n\t\t\t\t\tcolor: 'red'\n\t\t\t\t},\n\t\t\t\t\"deranged\" : {\n\t\t\t\t\tname : \"病态\",\n\t\t\t\t\tvalue : T.npcData.deranged || 0,\n\t\t\t\t\tactiveIcon : 'img/ui/sym-love.png',\n\t\t\t\t\tinactiveIcon: 'img/ui/sym-love-empty.png',\n\t\t\t\t\tcolor: 'purple'\n\t\t\t\t},\n\t\t\t\t",
+                    "tip": "2.0.10:新增病态值的UI设定(改用原版爱心图档+JS滤镜上色,原自订图档载入失败)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Sex",
+                    "findString": "<<if $sexstart is 1>>\n\t<<set $sexstart to 0>>\n\t<<consensual>>\n\t<<set $consensual to 1>>\n\t<<neutral 1>>\n\n\t<<maninit>>",
+                    "replace": "<<if $sexstart is 1>>\n\t<<set $sexstart to 0>>\n\t<<consensual>>\n\t<<set $consensual to ($kylarNonconsensual is 1) ? 0 : 1>>\n\t<<neutral 1>>\n\n\t<<maninit>>\n\t<<if $kylarIrritated is 1>><<set $enemyanger += 40>><</if>>",
+                    "tip": "2.0.1:合意值改由$kylarNonconsensual决定,拒绝时略微恼怒(改用不含可翻译文字的锚点)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Widgets Combat Man-Combat",
+                    "findString": "<<pain _pain>>",
+                    "replace": "<<if $kylarDrugUsed is 1>><<set _pain to _pain * 0.5>><</if>><<pain _pain>>",
+                    "tip": "凯拉尔病态道具:药物使用中时遭遇战疼痛上升幅度减半",
+                    "debug": true,
+                    "all": true
+                },
+                {
+                    "passage": "Street Kylar Sex Finish",
+                    "findString": "<<clotheson>>\n<<endcombat>>",
+                    "replace": "<<kylarUnequipItem>>\n<<clotheson>>\n<<endcombat>>",
+                    "tip": "凯拉尔病态道具:遭遇战结束后清除道具状态",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Rape Finish",
+                    "findString": "<<clotheson>>\n<<endcombat>>",
+                    "replace": "<<kylarUnequipItem>>\n<<clotheson>>\n<<endcombat>>",
+                    "tip": "凯拉尔病态道具:遭遇战结束后清除道具状态",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Sex",
+                    "findString": "<<He>>把你拉进小巷，转到另一个角落，远离窥探的目光。这里不知道什么时候放了一张床垫。凯拉尔倒在上面，把你拉到<<him>>身上。",
+                    "replace": "<<if $kylarDerangedFlow is 1>><<He>>把你拉进小巷，转到另一个角落，远离窥探的目光，把你拉近<<him>>身边。<<else>><<He>>把你拉进小巷，转到另一个角落，远离窥探的目光。这里不知道什么时候放了一张床垫。凯拉尔倒在上面，把你拉到<<him>>身上。<</if>>",
+                    "tip": "2.0.15:移除「这里不知道什么时候放了床垫」这句(仅病态流程生效,加$kylarDerangedFlow判断)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Sex Finish",
+                    "findString": "<<tearful>>你从床垫上站了起来。",
+                    "replace": "<<if _derangedMattress>><<tearful>>你从地上站了起来。<<else>><<tearful>>你从床垫上站了起来。<</if>>",
+                    "tip": "2.0.15:高潮结局「从床垫上站起来」改「从地上站起来」(仅病态流程生效)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Sex Finish",
+                    "findString": "你把凯拉尔推回床垫。",
+                    "replace": "<<if _derangedMattress>>你用力将凯拉尔推倒在地。<<else>>你把凯拉尔推回床垫。<</if>>",
+                    "tip": "2.0.15:击退结局「推回床垫」改「推倒在地」(仅病态流程生效)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Rape Finish",
+                    "findString": "<<tearful>>你从床垫上站了起来。",
+                    "replace": "<<if _derangedMattress>><<tearful>>你从地上站了起来。<<else>><<tearful>>你从床垫上站了起来。<</if>>",
+                    "tip": "2.0.15:高潮结局「从床垫上站起来」改「从地上站起来」(仅病态流程生效)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Rape Finish",
+                    "findString": "你把凯拉尔推回床垫。",
+                    "replace": "<<if _derangedMattress>>你用力将凯拉尔推倒在地。<<else>>你把凯拉尔推回床垫。<</if>>",
+                    "tip": "2.0.15:击退结局「推回床垫」改「推倒在地」(仅病态流程生效)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Street Kylar Rape Finish",
+                    "findString": "<<person2>><<person>>犹豫了一下，但当凯拉尔冲上前时，<<his>>离开了。<<person1>>这给了你所需要的机会，<<tearful>>你爬下床垫，朝相反的方向跑去。凯拉尔举起刀，好像想把它扔过来，但最终只是把它放在了脚边的床垫下。当你转过拐角时，<<He>>跪了下来，用双手捂住<<his>>的脸。",
+                    "replace": "<<if _derangedMattress>><<person2>><<person>>犹豫了一下，但当凯拉尔冲上前时，<<his>>离开了。<<person1>>这给了你所需要的机会，<<tearful>>你从地上爬起，朝相反的方向跑去。凯拉尔举起刀，好像想把它扔过来，但最终只是狠狠劈向脚边的砖墙，刀刃迸出刺耳的刮擦声。当你转过拐角时，<<He>>跪了下来，用双手捂住<<his>>的脸。<<else>><<person2>><<person>>犹豫了一下，但当凯拉尔冲上前时，<<his>>离开了。<<person1>>这给了你所需要的机会，<<tearful>>你爬下床垫，朝相反的方向跑去。凯拉尔举起刀，好像想把它扔过来，但最终只是把它放在了脚边的床垫下。当你转过拐角时，<<He>>跪了下来，用双手捂住<<his>>的脸。<</if>>",
+                    "tip": "2.0.15:逃跑结局「爬下床垫/刀插床垫」改「从地上爬起/刀劈砖墙」(仅病态流程生效)",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Cheats",
+                    "findString": "<<numberStepper \"<<symbol jealousy>>嫉妒\" `C.npc.Kylar.rage` { callback: value => { C.npc.Kylar.rage = value }, reverse: true }>>",
+                    "replace": "<<numberStepper \"<<symbol jealousy>>嫉妒\" `C.npc.Kylar.rage` { callback: value => { C.npc.Kylar.rage = value }, reverse: true }>>\n\t<<numberStepper \"<span style='filter:hue-rotate(280deg) saturate(1.3)'><<symbol love>></span> 病态\" `C.npc.Kylar.deranged || 0` { callback: value => { C.npc.Kylar.deranged = value }, max: 100 }>>\n\t<div style='font-size:0.75em;color:#999;margin-top:2px'>[病态除错] 状态=<<print (C.npc.Kylar.state === undefined ? \"undefined\" : C.npc.Kylar.state)>> / 今日=<<print Time.year>>-<<print Time.month>>-<<print Time.monthDay>> / 上次结算日=<<print ($kylarDerangedLastDecayDay === undefined ? \"(未设定)\" : $kylarDerangedLastDecayDay)>> / 今日已互动=<<print ($kylarInteractedToday === undefined ? \"(未设定)\" : $kylarInteractedToday)>></div>",
+                    "tip": "2.0.23:移除PassageReady多余的state=active限制(与累加逻辑不对称,疑似是衰退无效真因);作弊菜单新增除错信息行",
+                    "debug": true,
+                    "all": false
+                },
+                {
+                    "passage": "Bedroom",
+                    "findString": "<<bedclotheson \"bed\">>\n<<set $outside to 0>><<set $location to \"home\">><<home_effects>><<effects>><<getTarget true>>",
+                    "replace": "<<bedclotheson \"bed\">>\n<<set $outside to 0>><<set $location to \"home\">><<home_effects>><<effects>><<getTarget true>>\n<<if C.npc.Kylar and (C.npc.Kylar.deranged || 0) gte 40 and ($kylarNoPositiveDays || 0) gte 3 and $kylarInteractedToday isnot 1 and ($kylarApproachToday || 0) isnot 1 and ($kylarApproachCooldown || 0) lte 0 and $kylar_mad isnot 1 and State.length is State.size>>\n\t<<if random(1,100) lte 40>>\n\t\t<<set $kylarApproachToday to 1>>\n\t\t<<goto \"Kylar Home Approach\">>\n\t<</if>>\n<</if>>",
+                    "tip": "2.0.25:孤儿院卧室(排除艾弗里宅邸卧室)新增主动接近事件触发:病态>=40+连续3天无正向互动+当天未互动,40%几率,每日一次,触发后1天冷却",
+                    "debug": true,
+                    "all": false
+                }
+            ]
+        }
+    ],
+    "dependenceInfo": [
+        {
+            "modName": "TweeReplacer",
+            "version": "^1.2.0"
+        }
+    ]
+}

@@ -1,0 +1,739 @@
+:: Kylar Secluded Encounter
+<<set $kylarDerangedFlow to 1>>
+<<npc Kylar>><<person1>>
+你走在公园里铺好板岩的石路上,耳边有悦耳的鸟鸣,走着走着却听见身后不知何时多出了脚步声,你感觉不对劲,几乎是反射性地转过身,然后入眼就是一双对你充满痴迷的眼眸,那眼中倒映的是你惊诧的神情。
+<br><br>
+
+"噢......你发现我了?你一直知道我在跟着你吗?还是刚才才知道的?我好想你,能在这里遇见你让我很高兴。"凯拉尔脸上俱是愉悦与兴奋,也许还有一些颤抖。
+<br><br>
+
+<<set _kylarDeranged to (C.npc.Kylar.deranged || 0)>>
+<<if _kylarDeranged lt 11>>
+	<<link [[继续|Street Kylar Sex]]>><<set $sexstart to 1>><</link>>
+<<elseif _kylarDeranged lt 31>>
+	<<link [[继续|Kylar Secluded Item Restraint]]>><</link>>
+<<else>>
+	<<link [[继续|Kylar Secluded Item Advanced]]>><</link>>
+<</if>>
+
+
+:: Kylar Secluded Encounter Drain
+<<set $kylarDerangedFlow to 1>>
+<<npc Kylar>><<person1>>
+你不是很喜欢下水道的环境,这里阴森、幽暗而且潮湿,还时不时传来腐败的臭味还有老鼠的吱叫声。你谨慎的向前行,耳边原本只有你压抑的呼吸还有紧张的心跳,却在你进入下一个转角前,出现了鞋跟敲击地面的声音。
+<br><br>
+
+你鸡皮疙瘩顿起,转身发现一个矮小的身影站在你几步之外,热烈的视线盯得你有些不舒服。
+<br><br>
+
+"太好了,你终于注意到我了吗?"凯拉尔呼吸有些急促,情绪看起来有些高昂,他继续道:"现在终于只剩下我们两个了。"
+<br><br>
+
+<<set _kylarDeranged to (C.npc.Kylar.deranged || 0)>>
+<<if _kylarDeranged lt 11>>
+	<<link [[继续|Street Kylar Sex]]>><<set $sexstart to 1>><</link>>
+<<elseif _kylarDeranged lt 31>>
+	<<link [[继续|Kylar Secluded Item Restraint]]>><</link>>
+<<else>>
+	<<link [[继续|Kylar Secluded Item Advanced]]>><</link>>
+<</if>>
+
+
+:: Drain Kylar Sex Finish
+<<set $outside to 0>><<set $location to "town">><<effects>><<run statusCheck("Kylar")>>
+
+<<if $enemyarousal gte $enemyarousalmax>>
+	<<ejaculation>><<npcincr Kylar lust -20>>
+
+	凯拉尔闭上双眼,把头靠在你身上。
+	<<if $orgasmcurrent is 0 and !playerChastity()>>
+		<<if _kylarStatus.includes("Rage")>>
+			过了几秒,他退开,面向你的<<genitals>>。"你没有高潮,"他喃喃道,"是我...不够好吗?"他猛烈地摇头。"我会补偿你的。我做给你看。"
+		<<else>>
+			过了几秒,他退开,面向你的<<genitals>>。"你还没高潮,"他喃喃道,"这样对你不公平。毕竟是你让我...这样。来,我补偿你。"
+		<</if>>
+		<br><br>
+		<<kylarFinish>>
+
+		他重新倒回你身上,再次闭上眼睛。
+	<</if>>
+	<br><br>
+
+	<<if $kylarItem>>
+		<<if $kylarItem is "handcuffs">>
+			情事结束后,身体还残留着先前的余韵,使你浑身透着情欲的粉。被束缚着双手让你的身体获得不同于平时的刺激,腿间也比以往湿得更快,稍微磨蹭大腿的皮肤都能感觉到明显的湿意。
+			<br><br>
+
+			凯拉尔心满意足地伸手替你解开手铐,金属的边缘在激烈碰撞间给你的手腕留下暧昧的红印。他心疼地抚过那些痕迹,然后俯身吻了一下你柔软的脸颊道:"谢谢你同意让我这么做,今天我很尽兴,希望你也是。"
+			<br><br>
+
+			他专注地欣赏你此时的淫态,许久才恋恋不舍地收拾东西离开。
+		<<elseif $kylarItem is "gag">>
+			被口球赌着嘴的你发出细弱的呻吟,身体在快感的冲击下微微颤抖,你下意识想吞口水,但随着喉咙咕哝一声,还是让咽不下去的口涎溢出来挂在你的嘴角,最后淫乱地往下滴然后拉出长长的线。
+			<br><br>
+
+			你看着凯拉尔求助,他整理好衣服后就马上来帮你解开口球,球体一从口中拔出你就开始大口喘息,眼里泛着难受的泪光。
+			<br><br>
+
+			他小心翼翼的将口球擦干净收好,随后将你扶起并且道别:"我今天很开心,希望下次还能来找你。"
+			<br><br>
+
+			你看着他离开你的视线。
+		<<elseif $kylarItem is "toy" and $kylarToyTail is 1>>
+			凯拉尔沉醉地看着被你淫水沾湿的狐狸尾巴,餍足地露出笑容。
+			<br><br>
+
+			"你果然很适合。"他将沾有自己气味的体液抹到你腿上,像是在给自己的东西留下标记。
+			<br><br>
+
+			你软绵绵的没空管他在干什么,只知道有人要将你体内的肛塞拔出,可是穴内吸力太强,死死缠在金属表面不肯松口。对方开始用力,穴内的淫肉仿佛舍不得般,竟也更大力地吸着。凯拉尔抓着尾巴使劲一拔,肛塞这才顺利拔出。
+			<br><br>
+
+			被辗过敏感处的你发出一声浪叫,微开的穴口与肛塞之间牵着几条淫丝,藕断丝连。
+			<br><br>
+
+			"你真漂亮。"凯拉尔赞赏道。跟你待在一起时,他似乎特别快乐。
+		<<elseif $kylarItem is "toy">>
+			当数次高潮过去,你已经累得不太想动弹,大开的双腿间可以看见那粗壮的按摩棒正被你痉挛的肉穴紧紧吸着。凯拉尔捏着被淫水沾满的外侧一端想将它拔出,却在拔到一半时不慎滑脱,看着它又被你淫荡的肉洞给吸进去,前端刺激着你敏感的内壁,让你忍不住发出呻吟。
+			<br><br>
+
+			凯拉尔的眼尾被你勾人的声音刺激到发红,他大力抓紧按摩棒,然后一鼓作气往外拔出,当整根尺寸惊人的假阳具从你体内拔出时,发出啵的一声。
+			<br><br>
+
+			"你真是太棒了。"凯拉尔由衷称赞道,要不是刚才已经做过了,他大概还想按着你再干一次。
+		<<elseif $kylarItem is "drug">>
+			在经历过数次高潮的巅峰后,体内的药性终于退去,来自凯拉尔的新鲜体液覆盖在你的小腹前,触感黏稠暖热,并不是很舒服。你的大腿在激情过后仍然一抽一抽的,仿佛还在眷恋刚才的快感。
+			<br><br>
+
+			凯拉尔一改之前的急切,迷恋地抚摸着你哆嗦的身体,喃喃道:"你真漂亮......"他虔诚地俯下身再次亲吻你的肌肤,一遍一遍吻过那些牙印或吻痕,确保这些痕迹暂时不会被抹灭。
+			<br><br>
+
+			"我的爱人......我爱你。"他声音真挚,眸中深深刻着对你的情意。
+			<br><br>
+
+			他最后替你收拾好身体,这才满足地离开。
+		<</if>>
+	<<else>>
+		"或许我们可以在森林里结婚,"他说,眼睛依然闭着,"我父母可以——"
+		<br><br>
+
+		他突然惊醒,看了一眼手表。"我...我得走了,"他说,"抱歉。"他在水管另一端回头望了你一眼,随即消失在黑暗之中。
+	<</if>>
+	<br><br>
+
+	<<tearful>>你从冰冷潮湿的地面上起身。
+
+<<elseif $enemyhealth lte 0>>
+	你用力将凯拉尔推倒在地。
+	<br><br>
+
+	<<tearful>>你逃离这条下水道。
+
+<<else>>
+	"好...好吧,"凯拉尔结巴地说,"你一定很忙。我们下次再继续。"你能感觉到他目送你离开。
+
+<</if>>
+<br><br>
+
+<<kylarUnequipItem>>
+<<clotheson>>
+<<endcombat>>
+
+<<destinationeventend>>
+
+
+:: Drain Kylar Rape Finish
+<<set $outside to 0>><<set $location to "town">><<effects>>
+
+<<if $enemyarousal gte $enemyarousalmax>>
+	<<ejaculation>>
+
+	凯拉尔闭上双眼,把头靠在你身上。
+	<br><br>
+
+	<<if $kylarItem is "toy" and $kylarToyTail is 1>>
+		凯拉尔沉醉地看着被你淫水沾湿的狐狸尾巴,餍足地露出笑容。
+		<br><br>
+
+		"你果然很适合。"他将沾有自己气味的体液抹到你腿上,像是在给自己的东西留下标记。
+		<br><br>
+
+		你软绵绵的没空管他在干什么,只知道有人要将你体内的肛塞拔出,可是穴内吸力太强,死死缠在金属表面不肯松口。对方开始用力,穴内的淫肉仿佛舍不得般,竟也更大力地吸着。凯拉尔抓着尾巴使劲一拔,肛塞这才顺利拔出。
+		<br><br>
+
+		被辗过敏感处的你发出一声浪叫,微开的穴口与肛塞之间牵着几条淫丝,藕断丝连。
+		<br><br>
+
+		"你真漂亮。"凯拉尔赞赏道。跟你待在一起时,他似乎特别快乐。
+	<<elseif $kylarItem is "toy">>
+		当数次高潮过去,你已经累得不太想动弹,大开的双腿间可以看见那粗壮的按摩棒正被你痉挛的肉穴紧紧吸着。凯拉尔捏着被淫水沾满的外侧一端想将它拔出,却在拔到一半时不慎滑脱,看着它又被你淫荡的肉洞给吸进去,前端刺激着你敏感的内壁,让你忍不住发出呻吟。
+		<br><br>
+
+		凯拉尔的眼尾被你勾人的声音刺激到发红,他大力抓紧按摩棒,然后一鼓作气往外拔出,当整根尺寸惊人的假阳具从你体内拔出时,发出啵的一声。
+		<br><br>
+
+		"你真是太棒了。"凯拉尔由衷称赞道,要不是刚才已经做过了,他大概还想按着你再干一次。
+	<<elseif $kylarItem is "drug">>
+		在经历过数次高潮的巅峰后,体内的药性终于退去,来自凯拉尔的新鲜体液覆盖在你的小腹前,触感黏稠暖热,并不是很舒服。你的大腿在激情过后仍然一抽一抽的,仿佛还在眷恋刚才的快感。
+		<br><br>
+
+		凯拉尔一改之前的急切,迷恋地抚摸着你哆嗦的身体,喃喃道:"你真漂亮......"他虔诚地俯下身再次亲吻你的肌肤,一遍一遍吻过那些牙印或吻痕,确保这些痕迹暂时不会被抹灭。
+		<br><br>
+
+		"我的爱人......我爱你。"他声音真挚,眸中深深刻着对你的情意。
+		<br><br>
+
+		他最后替你收拾好身体,这才满足地离开。
+	<<else>>
+		"或许我们可以在森林里结婚,"他说,眼睛依然闭着,"我父母可以——"
+		<br><br>
+
+		他突然惊醒,看了一眼手表。"我...我得走了,"他说,"抱歉。"他在水管另一端回头望了你一眼,随即消失在黑暗之中。
+	<</if>>
+	<br><br>
+
+	<<tearful>>你从冰冷潮湿的地面上起身。
+
+<<elseif $enemyhealth lte 0>>
+	你用力将凯拉尔推倒在地。
+	<br><br>
+
+	<<tearful>>你逃离这条下水道。
+
+<<else>>
+	<<generate2>><<person2>>一个<<person>>出现在水管另一端。"那边还好吗?"他喊道。
+	<br><br>
+
+	<<person1>>凯拉尔摸向他的刀,朝那<<person2>><<person>>怒瞪。"别多管闲事,"<<person1>>他吼回去。
+	<br><br>
+
+那<<person2>><<person>>犹豫了一下,但在凯拉尔逼近时还是离开了。<<person1>>这给了你需要的机会。<<tearful>>你从地上爬起,朝反方向跑去。凯拉尔把刀举起,像是要扔向你,却只是狠狠朝脚边的水管劈下,刀刃磕在金属管壁上迸出刺耳的声响。他跪倒在地,双手掩面,你已经转过了弯道。
+
+<</if>>
+<br><br>
+
+<<kylarUnequipItem>>
+<<clotheson>>
+<<endcombat>>
+
+<<destinationeventend>>
+
+
+:: Kylar Item Widgets [widget]
+<<widget "kylarEquipItem">>
+	<<if $kylarItem is "handcuffs">>
+		<<bindtemp>>
+	<<elseif $kylarItem is "gag">>
+		<<set $worn.face to clone(setup.clothes.face.find(function(c){ return c.name === "cloth gag"; }))>>
+	<<elseif $kylarItem is "toy">>
+		<<set _kylarToyName to ($kylarToyTail is 1) ? "fox tail butt plug" : "butt plug">>
+		<<set $worn.butt_plug to clone(setup.sextoys.find(function(t){ return t.name === _kylarToyName && t.category === "butt_plug"; }))>>
+		<<set $worn.butt_plug.state to "worn">>
+		<<set $worn.butt_plug.worn to true>>
+	<<elseif $kylarItem is "drug">>
+		<<set $kylarDrugUsed to 1>>
+	<</if>>
+<</widget>>
+
+<<widget "kylarUnequipItem">>
+	<<if $kylarItem is "handcuffs">>
+		<<unbindtemp>>
+	<<elseif $kylarItem is "gag">>
+		<<set $worn.face to clone(setup.clothes.face[0])>>
+	<<elseif $kylarItem is "toy">>
+		<<run delete $worn.butt_plug>>
+	<</if>>
+	<<set $kylarItem to 0>>
+	<<set $kylarToyTail to 0>>
+	<<set $kylarNonconsensual to 0>>
+	<<set $kylarIrritated to 0>>
+	<<set $kylarDrugUsed to 0>>
+<</widget>>
+
+
+:: Kylar Secluded Item Restraint
+<<npc Kylar>><<person1>>
+<<set $kylarItem to (random(1,100) lte 50) ? "handcuffs" : "gag">>
+
+<<if $kylarItem is "gag">>
+	他的话让你不寒而栗,而现在只剩你们两人独处的状况更是对你不利。
+	<br><br>
+
+	"呼......"凯拉尔的呼吸因为接近你而加快,他苍白的脸颊浮起淡红,从怀中拿出一条两端固定着黑色皮带的红色口球,道:"看看这是什么,是我特意给你带的......"
+	<br><br>
+
+	他的目光黏在你身上,仿佛生怕你会突然从他眼前消失,见你脸上流露出惊讶,他的表情变得晦涩不明。
+	<br><br>
+
+	"你看起来并没有很高兴,你不喜欢它,是吗?"他问。
+<<else>>
+	你对他的话不置可否,询问他到底想做什么,他阴沉的脸上带着笑意,黑色浏海下的双瞳着迷地望着你,并从怀中拿出一副手铐。你搞不清楚他是从哪弄来这个的,手铐看起来沉甸甸的,反射着金属的冷光,晃动时铁链相撞发出声响。
+	<br><br>
+
+	"我准备了这个给你......"他目光灼灼,看起来很期盼你的回答。
+<</if>>
+<br><br>
+
+<<link [[让他做|Kylar Secluded Item Restraint Accept]]>><</link>>
+<br>
+<<link [[摇头拒绝|Kylar Secluded Item Restraint Refuse]]>><</link>> <span class="red">+嫉妒</span>
+
+
+:: Kylar Secluded Item Restraint Accept
+<<npc Kylar>><<person1>>
+<<set $kylarNonconsensual to 0>>
+
+<<if $kylarItem is "gag">>
+	你摇摇头并且主动走上前靠近他。他被你出乎预料的反应震惊到了,但很快就陷入狂喜中。
+	<br><br>
+
+	"真的吗?你喜欢它?"凯拉尔的双眸似乎绽放着光芒,在看着你时格外闪亮。他雀跃地说:"我就知道你不会拒绝我!"
+	<br><br>
+
+	他高兴地抬手为你戴上口球,你张嘴顺从的将球体半含入口中,维持无法阖嘴的状态,金属扣扣上后口球就牢牢塞在你嘴里,现在你暂时没有办法正常说话了,只能发出咿呀的呻吟。
+<<else>>
+	你看向凯拉尔手里的手铐,站在原地没有离开。他见你默许后便激动起来,惊喜道:"你居然真的答应了?"
+	<br><br>
+
+	他上前牵住你的手,用细软的手指对着你的手心轻轻摩娑,带来搔痒的触感,说:"真好,我以为你会拒绝我......看来你一定比我想像的要更喜欢我,对吧?"
+	<br><br>
+
+	凯拉尔的眼神中满是浓烈的爱意,半刻都舍不得从你身上挪开。
+	<br><br>
+
+	你没有反驳他,任由他将冰凉的金属铐在你的手腕上,冷硬的链子将你的双手牵制住,从现在起仅能小幅度活动。
+<</if>>
+<br><br>
+
+<<kylarEquipItem>>
+<<link [[继续|Street Kylar Sex]]>><<set $sexstart to 1>><</link>>
+
+
+:: Kylar Secluded Item Restraint Refuse
+<<npc Kylar>><<person1>>
+<<set $kylarNonconsensual to 1>>
+<<set $kylarIrritated to 1>>
+<<npcincr Kylar rage 1>>
+
+<<if $kylarItem is "gag">>
+	你点点头,诚实地回答他。凯拉尔脸上的笑容一下子就垮了下来,整个人无措地僵在原地,他张口想说点什么,但在看到你坚决的表情后,心里最后一丝希望被彻底打碎,只能将想说的话全吞下去。
+	<br><br>
+
+	"......不喜欢也没关系。"他说,声音有些干哑:"也许下次换个地点你就会接受了?"
+	<br><br>
+
+	看着他这副神情,你没有丝毫心软与反悔,只是安静地看着他收起口球失望地离开现场。
+<<else>>
+	你皱了皱眉,后退一步避开他的视线,他眼中的期望转变成失落,沮丧道:"原来你不喜欢我给你准备的惊喜吗?"
+	<br><br>
+
+	你摇摇头,这让他显得更加难过,微微低下头去,使浏海稍微遮挡住他的双眼。
+	<br><br>
+
+	他没有再上前接近你,保持原有的距离收起手铐道:"好吧,如果你不喜欢就算了,但我还是很喜欢你。"
+	<br><br>
+
+	凯拉尔转过身独自离开不再纠缠,他的背影略显寂寥,让你觉得有些沉重。
+<</if>>
+<br><br>
+
+<<set $kylarItem to 0>>
+<<link [[继续|Street Kylar Sex]]>><<set $sexstart to 1>><</link>>
+
+
+:: Kylar Secluded Item Advanced
+<<npc Kylar>><<person1>>
+<<if random(1,100) lte 30>>
+	<<set $kylarItem to "drug">>
+<<else>>
+	<<set $kylarItem to "toy">>
+	<<set $kylarToyTail to (random(1,100) lte 50) ? 1 : 0>>
+<</if>>
+
+<<if $kylarItem is "drug">>
+	你不晓得凯拉尔有什么意图,只知道与对方独处让你感到不安。
+	<br><br>
+
+	他眼里翻涌着对你的爱意,随后兴致勃勃的从口袋中拿出一个小药罐。他捏着瓶子刷刷地晃两下,朝你笑道:"这个是催情药,可以帮我们助点兴......你要不要试试看?"
+	<br><br>
+
+	你看着他手里的药罐,标签是诱惑暧昧的粉红色,但你根本不知道这种来历不明的玩意儿吃下去以后到底会发生什么事情,或许根本不是催情药呢?
+<<elseif $kylarToyTail is 1>>
+	见你没有答话,他从怀中拿出一团毛绒绒的东西,你第一眼觉得那可能是个可爱的动物小装饰,直到你看到前端闪烁着金属光泽的肛塞。
+	<br><br>
+
+	当发现你盯着手里的肛塞瞧时,凯拉尔的脸微微发红,似乎很是兴奋,语气也变得欢快起来:"怎么样?你也觉得它很适合你对吧?要不要马上来试用看看?"
+	<br><br>
+
+	他的眼神变得越发火热,明显迫切地想要将肛塞放进你身体里试试。
+<<else>>
+	你不太确定他究竟具体跟了你多久,但仔细回想一路上似乎确实有种被若有似无的视线盯上的感觉......你的头皮突然有些发麻。
+	<br><br>
+
+	凯拉尔爱慕的目光紧盯着你,跟之前那股如影随形的视线一模一样。他说惋惜地说:"我们一整天都没怎么说到话,我其实可以等到明天上学再找你......但我等不及了。"
+	<br><br>
+
+	他就自顾自从怀中掏出一个物件,你仔细一看,发现那是一个通体漆黑的矽胶按摩棒。
+	<br><br>
+
+	"这个是我特别给你挑选的,要试试看吗?"他微笑对你说。
+<</if>>
+<br><br>
+
+<<link [[让他做|Kylar Secluded Item Advanced Accept]]>><</link>>
+<br>
+<<link [[拒绝|Kylar Secluded Item Advanced Refuse]]>><</link>> <span class="red">++嫉妒</span>
+
+
+:: Kylar Secluded Item Advanced Accept
+<<npc Kylar>><<person1>>
+<<set $kylarNonconsensual to 0>>
+
+<<if $kylarItem is "drug">>
+	你犹豫一会,最后还是点头同意了。
+	<br><br>
+
+	凯拉尔的喜悦溢于言表,他打开瓶盖将数颗粉色的胶囊倒在掌心中,并且上前给你递过来,嘱咐道:"这些都要一起吞下去。"
+	<br><br>
+
+	你接过胶囊塞入口中,此时一瓶已经转开瓶盖的矿泉水适时地递到你面前,让你能就着水吞药不至于被噎死,他则眼睛一眨不眨地看着你吞药。
+	<br><br>
+
+	你将水递还给他时,他看一眼瓶口,喉咙动了一下,然后将你喝过的矿泉水当作宝贝一样收好。
+	<br><br>
+
+	药效开始在你体内发挥,你的小腹变得热烫,腿间也难耐无比。
+<<else>>
+	你看着凯拉尔手里的玩具没有表示拒绝,他喜出望外地靠过来,再次确认道:"你真的同意了?"
+	<br><br>
+
+	你看着他眼里的期待点点头,并且配合地躺下。他立即将你的双腿分开,贪婪地盯着你臀间那小巧的肉洞,情动地说:"好,那我会让你舒服的......"说完就将一指捅入穴内快速抽动与扩张,更多手指依序塞进去直到淫乱的水声响起,此时的穴口微微敞开已然做足了准备,他才拔出手指,将玩具对准那犹在歙张的小洞插进去。
+<</if>>
+<br><br>
+
+<<kylarEquipItem>>
+<<link [[继续|Street Kylar Sex]]>><<set $sexstart to 1>><</link>>
+
+
+:: Kylar Secluded Item Advanced Refuse
+<<npc Kylar>><<person1>>
+<<set $kylarNonconsensual to 1>>
+<<set $kylarIrritated to 1>>
+<<npcincr Kylar rage 2>>
+<<set _forced to (random(1,100) lte 50)>>
+
+<<if $kylarItem is "drug">>
+	你态度强硬地拒绝他,为了安全着想,你并不想服用这种成分不明的危险药物。凯拉尔愣在原地,似乎还在消化你给出的回答,他握着药罐的手缓缓捏紧,甚至用力到开始发颤。
+	<br><br>
+
+	"你、你明明知道我不会伤害你......为什么还要拒绝我?你不喜欢我吗?"他垂眼看向你身旁不远处的某个点,不知道在想着什么,气氛变得凝滞,让你觉得有些惶恐,打算在他开始行动前离开。
+	<br><br>
+
+	<<if _forced>>
+		"不行!"他突然扑上来朝你发难,捏住你的下巴要强行掰开。你吃痛的反抗起来,本能的将双手放在对方纤弱的窄肩上想用力推开,却发现此时的他力气大得惊人,你根本没有办法推开他分毫。
+		<br><br>
+
+		几颗胶囊被强硬地塞进你口中,你在挣扎间不慎将其吞下,凯拉尔见状后卸下力气,你趁机大力一推,他被你推得往后踉跄并且跌坐在地。
+		<br><br>
+
+		药物刚进体内就迅速溶解,你感觉身体正在飞快地发热,腿间的湿意快速扩散,意识涣散间,凯拉尔朝你走来。
+		<br><br>
+
+		"你是我的......"他模糊的脸上挂着兴奋且愉悦的笑容。
+	<<else>>
+		你看到他的肩垂了下来,好似做了很大的决定后才重新抬起头看向你,妥协道:"没关系,你不愿意就算了,或许你以后会改变主意?"
+		<br><br>
+
+		他眼中虽有委屈,但还是乖乖将药瓶收起来,不再逼迫你服药。
+		<br><br>
+
+		凯拉尔肯退让使你松了一口气,身体也变得不再那么紧绷。
+	<</if>>
+<<else>>
+	你不打算继续与凯拉尔纠缠,于是明确拒绝对方的要求。凯拉尔的眼神黯淡下来,但仍抱持着一丝侥幸,他向前走一步想为自己争取机会,并且抬手想去触碰你的肩膀,但你却跟着后退一步,直接避开他的手与他保持距离,这让他眼里的光瞬间熄灭,抬起的手也无力地放下。
+	<br><br>
+
+	见他不再多言,你打算绕过他迳直离开,并未注意到对方接下来的动作。
+	<br><br>
+
+	<<if _forced>>
+		"抱歉。"突然有人猛然冲过来抱住你,你猝不及防的被推得一个迾趄,险些要向前栽倒,而在你跌倒前,你又感觉到自己被人大力抓住手臂往后拽,脖子被一个锐利且冰凉的东西抵上。
+		<br><br>
+
+		感知到危险的你浑身僵硬,努力压抑着自己的恐惧,开口质问对方为什么这么做。
+		<br><br>
+
+		身后人的呼吸吹在你的耳畔,让人发痒,说出来的话却令你感到害怕:"不要走......只要你留下来,我就不会伤害你,而且我原本也不打算伤害你。"
+		<br><br>
+
+		你最后屈服了,不情愿地躺到地上去,敞开双腿任由凯拉尔将那冰凉的死物推进你温热的身体里。
+		<br><br>
+
+		"很好。"他脸上的阴鸷逐渐消散,变成你平时熟悉的模样。
+	<<else>>
+		"......对不起。"你突然听见他说。
+		<br><br>
+
+		你困惑地转过身,发现他已经收起玩具,局促不安地站在原地,可怜巴巴地看着你。
+		<br><br>
+
+		"别离开我,拜托。"凯拉尔捏着自己的手,语气中带上祈求:"我不是故意要惹你不高兴的,求你别走。"
+		<br><br>
+
+		或许他的眼神看起来太诚恳了,让你有些心软,所以你最后选择留下来。
+		<br><br>
+
+		凯拉尔的脸上又恢复笑容。
+		<br><br>
+
+		"很高兴你能留在我身边。"他鼓起勇气再次牵住你的手,体温的传递让你莫名感到安心。
+	<</if>>
+<</if>>
+<br><br>
+
+<<if !_forced>>
+	<<set $kylarItem to 0>>
+<<else>>
+	<<kylarEquipItem>>
+<</if>>
+<<link [[继续|Street Kylar Sex]]>><<set $sexstart to 1>><</link>>
+
+
+:: Kylar Item Removal Sex Finish
+<<set $outside to 0>><<set $location to "town">><<effects>><<run statusCheck("Kylar")>>
+
+<<ejaculation>><<npcincr Kylar lust -20>>
+
+凯拉尔闭上双眼,把头靠在你身上。
+<<if $orgasmcurrent is 0 and !playerChastity()>>
+	<<if _kylarStatus.includes("Rage")>>
+		过了几秒,他退开,面向你的<<genitals>>。"你没有高潮,"他喃喃道,"是我...不够好吗?"他猛烈地摇头。"我会补偿你的。我做给你看。"
+	<<else>>
+		过了几秒,他退开,面向你的<<genitals>>。"你还没高潮,"他喃喃道,"这样对你不公平。毕竟是你让我...这样。来,我补偿你。"
+	<</if>>
+	<br><br>
+	<<kylarFinish>>
+
+	他重新倒回你身上,再次闭上眼睛。
+<</if>>
+<br><br>
+
+<<if $kylarItem is "handcuffs">>
+	情事结束后,身体还残留着先前的余韵,使你浑身透着情欲的粉。被束缚着双手让你的身体获得不同于平时的刺激,腿间也比以往湿得更快,稍微磨蹭大腿的皮肤都能感觉到明显的湿意。
+	<br><br>
+
+	凯拉尔心满意足地伸手替你解开手铐,金属的边缘在激烈碰撞间给你的手腕留下暧昧的红印。他心疼地抚过那些痕迹,然后俯身吻了一下你柔软的脸颊道:"谢谢你同意让我这么做,今天我很尽兴,希望你也是。"
+	<br><br>
+
+	他专注地欣赏你此时的淫态,许久才恋恋不舍地收拾东西离开。
+<<elseif $kylarItem is "gag">>
+	被口球赌着嘴的你发出细弱的呻吟,身体在快感的冲击下微微颤抖,你下意识想吞口水,但随着喉咙咕哝一声,还是让咽不下去的口涎溢出来挂在你的嘴角,最后淫乱地往下滴然后拉出长长的线。
+	<br><br>
+
+	你看着凯拉尔求助,他整理好衣服后就马上来帮你解开口球,球体一从口中拔出你就开始大口喘息,眼里泛着难受的泪光。
+	<br><br>
+
+	他小心翼翼的将口球擦干净收好,随后将你扶起并且道别:"我今天很开心,希望下次还能来找你。"
+	<br><br>
+
+	你看着他离开你的视线。
+<<elseif $kylarItem is "toy" and $kylarToyTail is 1>>
+	凯拉尔沉醉地看着被你淫水沾湿的狐狸尾巴,餍足地露出笑容。
+	<br><br>
+
+	"你果然很适合。"他将沾有自己气味的体液抹到你腿上,像是在给自己的东西留下标记。
+	<br><br>
+
+	你软绵绵的没空管他在干什么,只知道有人要将你体内的肛塞拔出,可是穴内吸力太强,死死缠在金属表面不肯松口。对方开始用力,穴内的淫肉仿佛舍不得般,竟也更大力地吸着。凯拉尔抓着尾巴使劲一拔,肛塞这才顺利拔出。
+	<br><br>
+
+	被辗过敏感处的你发出一声浪叫,微开的穴口与肛塞之间牵着几条淫丝,藕断丝连。
+	<br><br>
+
+	"你真漂亮。"凯拉尔赞赏道。跟你待在一起时,他似乎特别快乐。
+<<elseif $kylarItem is "toy">>
+	当数次高潮过去,你已经累得不太想动弹,大开的双腿间可以看见那粗壮的按摩棒正被你痉挛的肉穴紧紧吸着。凯拉尔捏着被淫水沾满的外侧一端想将它拔出,却在拔到一半时不慎滑脱,看着它又被你淫荡的肉洞给吸进去,前端刺激着你敏感的内壁,让你忍不住发出呻吟。
+	<br><br>
+
+	凯拉尔的眼尾被你勾人的声音刺激到发红,他大力抓紧按摩棒,然后一鼓作气往外拔出,当整根尺寸惊人的假阳具从你体内拔出时,发出啵的一声。
+	<br><br>
+
+	"你真是太棒了。"凯拉尔由衷称赞道,要不是刚才已经做过了,他大概还想按着你再干一次。
+<<elseif $kylarItem is "drug">>
+	在经历过数次高潮的巅峰后,体内的药性终于退去,来自凯拉尔的新鲜体液覆盖在你的小腹前,触感黏稠暖热,并不是很舒服。你的大腿在激情过后仍然一抽一抽的,仿佛还在眷恋刚才的快感。
+	<br><br>
+
+	凯拉尔一改之前的急切,迷恋地抚摸着你哆嗦的身体,喃喃道:"你真漂亮......"他虔诚地俯下身再次亲吻你的肌肤,一遍一遍吻过那些牙印或吻痕,确保这些痕迹暂时不会被抹灭。
+	<br><br>
+
+	"我的爱人......我爱你。"他声音真挚,眸中深深刻着对你的情意。
+	<br><br>
+
+	他最后替你收拾好身体,这才满足地离开。
+<</if>>
+<br><br>
+
+<<tearful>>你从地上起身。
+
+<<kylarUnequipItem>>
+<<clotheson>>
+<<endcombat>>
+
+<<destinationeventend>>
+
+
+:: Kylar Item Removal Rape Finish
+<<set $outside to 0>><<set $location to "town">><<effects>>
+
+<<ejaculation>>
+
+凯拉尔闭上双眼,把头靠在你身上。
+<br><br>
+
+<<if $kylarItem is "toy" and $kylarToyTail is 1>>
+	凯拉尔沉醉地看着被你淫水沾湿的狐狸尾巴,餍足地露出笑容。
+	<br><br>
+
+	"你果然很适合。"他将沾有自己气味的体液抹到你腿上,像是在给自己的东西留下标记。
+	<br><br>
+
+	你软绵绵的没空管他在干什么,只知道有人要将你体内的肛塞拔出,可是穴内吸力太强,死死缠在金属表面不肯松口。对方开始用力,穴内的淫肉仿佛舍不得般,竟也更大力地吸着。凯拉尔抓着尾巴使劲一拔,肛塞这才顺利拔出。
+	<br><br>
+
+	被辗过敏感处的你发出一声浪叫,微开的穴口与肛塞之间牵着几条淫丝,藕断丝连。
+	<br><br>
+
+	"你真漂亮。"凯拉尔赞赏道。跟你待在一起时,他似乎特别快乐。
+<<elseif $kylarItem is "toy">>
+	当数次高潮过去,你已经累得不太想动弹,大开的双腿间可以看见那粗壮的按摩棒正被你痉挛的肉穴紧紧吸着。凯拉尔捏着被淫水沾满的外侧一端想将它拔出,却在拔到一半时不慎滑脱,看着它又被你淫荡的肉洞给吸进去,前端刺激着你敏感的内壁,让你忍不住发出呻吟。
+	<br><br>
+
+	凯拉尔的眼尾被你勾人的声音刺激到发红,他大力抓紧按摩棒,然后一鼓作气往外拔出,当整根尺寸惊人的假阳具从你体内拔出时,发出啵的一声。
+	<br><br>
+
+	"你真是太棒了。"凯拉尔由衷称赞道,要不是刚才已经做过了,他大概还想按着你再干一次。
+<<elseif $kylarItem is "drug">>
+	在经历过数次高潮的巅峰后,体内的药性终于退去,来自凯拉尔的新鲜体液覆盖在你的小腹前,触感黏稠暖热,并不是很舒服。你的大腿在激情过后仍然一抽一抽的,仿佛还在眷恋刚才的快感。
+	<br><br>
+
+	凯拉尔一改之前的急切,迷恋地抚摸着你哆嗦的身体,喃喃道:"你真漂亮......"他虔诚地俯下身再次亲吻你的肌肤,一遍一遍吻过那些牙印或吻痕,确保这些痕迹暂时不会被抹灭。
+	<br><br>
+
+	"我的爱人......我爱你。"他声音真挚,眸中深深刻着对你的情意。
+	<br><br>
+
+	他最后替你收拾好身体,这才满足地离开。
+<<else>>
+	"或许我们可以在森林里结婚,"他说,眼睛依然闭着,"我父母可以——"
+	<br><br>
+
+	他突然惊醒,看了一眼手表。"我...我得走了,"他说,"抱歉。"他在巷口回头望了你一眼,随即消失无踪。
+<</if>>
+<br><br>
+
+<<tearful>>你从地上起身。
+
+<<kylarUnequipItem>>
+<<clotheson>>
+<<endcombat>>
+
+<<destinationeventend>>
+
+
+:: PassageReady
+<<if $NPCName and $NPCName.length and C.npc.Kylar>>
+	<<set _kylarToday to Time.year + "-" + Time.month + "-" + Time.monthDay>>
+	<<if $kylarDerangedLastDecayDay is undefined>>
+		<<set $kylarDerangedLastDecayDay to _kylarToday>>
+		<<set $kylarInteractedToday to 0>>
+		<<set $kylarNoPositiveDays to 0>>
+		<<set $kylarApproachToday to 0>>
+		<<set $kylarApproachCooldown to 0>>
+	<<elseif $kylarDerangedLastDecayDay isnot _kylarToday>>
+		<<set _kylarDecayPct to ($kylarInteractedToday is 1) ? 0.05 : 0.02>>
+		<<set C.npc.Kylar.deranged to Math.clamp((C.npc.Kylar.deranged || 0) * (1 - _kylarDecayPct), 0, 100)>>
+		<<set $kylarNoPositiveDays to ($kylarInteractedToday is 1) ? 0 : ($kylarNoPositiveDays || 0) + 1>>
+		<<set $kylarApproachCooldown to Math.max(0, ($kylarApproachCooldown || 0) - 1)>>
+		<<set $kylarDerangedLastDecayDay to _kylarToday>>
+		<<set $kylarInteractedToday to 0>>
+		<<set $kylarApproachToday to 0>>
+	<</if>>
+<</if>>
+
+
+:: Kylar Home Approach
+<<npc Kylar>><<person1>>
+你一回到家就感觉气氛不太对,果然在打开灯的一刹那,就看到凯拉尔站在房间内,目光紧紧盯着你。他胸膛快速起伏,压抑着胸中激烈的情绪,问道:「为什么不来找我?我一直在等你。」
+<br><br>
+
+你还没来得及解释就被他拽着手腕半拽半拖进屋内,门被砰的一声大力关上,将你们关在这个小空间内。
+<br><br>
+
+你没想到他今天会这么有力,能将你的手腕箍到生疼。他看上去相当不稳定,似乎随时都会爆发的炸弹。
+<br><br>
+
+凯拉尔松开你的手,在看到你吃痛的表情时,他的表情似乎有些松动,但是妒火终究盖过了理智,他问:「你为什么要去找别人?那些人能给你带来什么?有我一个还不够吗?」
+<br><br>
+
+你摇摇头,试图缓和他的情绪,可是凯拉尔却像是被点燃了一样,粗鲁地抓住你的肩膀,直视你道:「你不用为他们解释!你不需要他们,你只需要我。」
+<br><br>
+
+<<link [[安抚他|Kylar Home Approach Comfort]]>><</link>> <span class="pink">+爱意</span> <span class="green">-嫉妒</span>
+<br>
+<<link [[沉默|Kylar Home Approach Silence]]>><</link>> <span class="red">++嫉妒</span>
+
+
+:: Kylar Home Approach Comfort
+<<npc Kylar>><<person1>>
+<<set C.npc.Kylar.love += 1>>
+<<set C.npc.Kylar.deranged to Math.clamp((C.npc.Kylar.deranged || 0) + 1, 0, 100)>>
+<<set C.npc.Kylar.rage -= 1>>
+<<set $kylarInteractedToday to 1>>
+<<set $kylarApproachCooldown to 1>>
+你平静地看着他,虽然心里免不了害怕,但依然温和地看着对方。
+<br><br>
+
+凯拉尔见你目光平和,情绪似乎慢慢缓了下去,你见准机会往前抱住他那并不宽阔,甚至称得上是单薄的身躯,手轻抚对方的后背。
+<br><br>
+
+他在被抱住的那一刻僵住,却在你的安抚中一点一点平静下来,良久,才低声道:「......我等你好久了,你都不来找我。」
+<br><br>
+
+你再一次向他解释缘由,这次他不再歇斯底里,而是软下身体回应你的拥抱。
+<br><br>
+
+「在你心里是最重要的,对吗?」他问。
+<br><br>
+
+你点点头,将脸颊靠在他的肩膀上,让胸膛相贴时可以感受到彼此的心跳。
+<br><br>
+
+你的安抚终于奏效,他把脸贴到你的颈窝旁,听着颈动脉那让人心安的脉动,低声道:「你在我心里也是,没有人能取代你。」
+<br><br>
+
+你稍微往后退,抚摸着他的脸颊,将柔软的吻印在那微微颤抖的两片嘴唇上。
+<br><br>
+
+他重新对上你的双眸,并且在里头看到了他想要的东西。
+<br><br>
+
+「我爱你。」他说,然后同样亲吻你的唇,道:「你只能看着我,而我也只会看着你。」
+<br><br>
+
+<<link [[继续|Bedroom]]>><</link>>
+
+
+:: Kylar Home Approach Silence
+<<npc Kylar>><<person1>>
+<<set C.npc.Kylar.rage += 20>>
+<<set $kylarApproachCooldown to 1>>
+你没有回应他,只是安静地看着他。
+<br><br>
+
+凯拉尔脸上的热切一点一点褪去,张了张嘴,话却卡在喉咙里。「……啊,」他别开视线,抓了抓后颈,「我...我太冲动了。」
+<br><br>
+
+他退了半步,又回头看你一眼,随即转身,脚步略显仓促地往门口走去,留下你一个人和满室尚未散去的沉默。
+<br><br>
+
+<<link [[继续|Bedroom]]>><</link>>
