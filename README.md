@@ -15,7 +15,7 @@
 
 ## 內容物
 
-- `KylarDerangedTracking-CHS.mod.zip`:打包好的模組檔案,可直接安裝
+- `KylarDerangedTracking-CHS.mod.zip`:打包好的模組檔案，可直接安裝
 
 ## 說明
 
